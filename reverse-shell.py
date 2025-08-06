@@ -23,4 +23,4 @@ if __name__ == "__main__":
         except Exception as e:
             print(f'Erro: {e}')
     else:
-        print('Modo de uso: python3 client-tcp.py <ip> <porta>')
+        print('Modo de uso: python3 reverse-shell.py <ip> <porta>')
